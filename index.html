@@ -5,24 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lasanshwa Rani | Filmmaker</title>
     <style>
-        /* --- 1. DESIGN SYSTEM (Cinematic Dark Mode) --- */
+
         :root {
-            /* This is the cool dark gradient */
+         
             --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e); 
             
-            --card-bg: rgba(255, 255, 255, 0.05); /* Glassmorphism effect */
+            --card-bg: rgba(255, 255, 255, 0.05); 
             --text-main: #ffffff;
             --text-sub: #cccccc;
-            --accent: #00d2ff; /* Cyan accent (can be changed to red #E50914) */
-        }
-
+            --accent: #00d2ff; 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             
-            /* Apply the gradient background */
+          
             background: var(--bg-gradient);
             background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite; /* Subtle movement */
+            animation: gradientBG 15s ease infinite; 
             
             display: flex;
             justify-content: center;
@@ -33,42 +31,39 @@
             color: var(--text-main);
         }
 
-        /* Animation for the background movement */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* The Card Container with "Glass" effect */
         .card {
             width: 100%;
             max-width: 380px;
             text-align: center;
             padding: 40px 25px;
             background: var(--card-bg);
-            backdrop-filter: blur(10px); /* Blurs the background behind the card */
+            backdrop-filter: blur(10px); 
             border-radius: 20px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
-        /* Profile Picture */
+       
         .profile-pic {
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 3px solid var(--accent); /* Accent color ring */
-            object-fit: cover; /* Ensures image doesn't stretch */
+            border: 3px solid var(--accent);
+            object-fit: cover; 
             margin-bottom: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        /* Typography */
         h1 { margin: 10px 0 5px 0; font-size: 24px; font-weight: 700; }
         p { color: var(--text-sub); font-size: 15px; margin: 0 0 30px 0; font-weight: 400; letter-spacing: 0.5px; }
 
-        /* --- THE BUTTONS --- */
+        
         .links-container {
             display: flex;
             flex-direction: column;
@@ -85,10 +80,10 @@
             transition: all 0.3s ease;
             cursor: pointer;
             width: 100%;
-            box-sizing: border-box; /* Keeps padding inside width */
+            box-sizing: border-box; 
         }
 
-        /* Style A: Primary Action (Save Contact) */
+       
         .btn-primary {
             background: linear-gradient(90deg, var(--accent), #3a7bd5);
             color: #000;
@@ -96,14 +91,13 @@
             box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
         }
         
-        /* Style B: Secondary Links (Portfolio, Socials) */
+       
         .btn-link {
             background: rgba(255, 255, 255, 0.1);
             color: var(--text-main);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Hover Effects */
         .btn:hover { transform: translateY(-3px); }
         .btn-link:hover { background: rgba(255, 255, 255, 0.2); border-color: var(--text-main); }
         .btn-primary:hover { box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6); }
@@ -126,7 +120,6 @@
     </div>
 
     <script>
-        // --- 1. YOUR DATA ---
         const profile = {
             firstName: "Lasanshwa",
             lastName: "Rani",
@@ -134,7 +127,6 @@
             phone: "+91 60097 45014",
             email: "lasanshwakevinrani@gmail.com",
             
-            // HERE IS THE FIX: Just put the filename
             image: "profile.jpg", 
             
             links: [
@@ -145,12 +137,11 @@
             ]
         };
 
-        // --- 2. RENDER THE CARD ---
         document.getElementById('userName').textContent = `${profile.firstName} ${profile.lastName}`;
         document.getElementById('userTitle').textContent = profile.title;
         document.getElementById('userImage').src = profile.image;
 
-        // Loop through links
+    
         const container = document.getElementById('dynamicLinks');
         profile.links.forEach(link => {
             const a = document.createElement('a');
@@ -161,7 +152,7 @@
             container.appendChild(a);
         });
 
-        // --- 3. DOWNLOAD VCF LOGIC ---
+        
         function downloadVCF() {
             const vcard = [
                 'BEGIN:VCARD',
@@ -185,6 +176,4 @@
         }
     </script>
 </body>
-
 </html>
-
